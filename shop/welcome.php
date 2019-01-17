@@ -56,6 +56,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link rel="stylesheet" href="dist/css/bootstrap-select.css">
 <!-- Custom CSS -->
 <link href="css/style.css" rel='stylesheet' type='text/css' />
+<link href="css/style2.css" rel='stylesheet' type='text/css' />
 <link rel="shortcut icon" href="../favicon.ico">
 <link rel="stylesheet" type="text/css" href="css/default.css" />
 <link rel="stylesheet" type="text/css" href="css/component.css" />
@@ -76,7 +77,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script type="text/javascript" language="javascript" src="js/dataTables.tableTools.js"></script>
 <!-- //lined-icons -->
 
-   <!--pie-chart--->
+   <!--pie-chart-->
 <script src="js/pie-chart.js" type="text/javascript"></script>
 <script src="js/jquery-1.10.2.min.js"></script>
 
@@ -85,484 +86,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
  
 	<style>
-	.box {
-  position:relative;  
-  width: 100px;
-  max-width:100%;
-  border-style: solid;
-    border-color: red;
-	 border-radius: 25px;
-  height: 100px;
-  padding:10px 0 20px 0;
-  float:left;
-  text-align:center;
-  margin: 10px 0 0 10px;
-  background-color: #55ca0f;
-  -webkit-box-shadow: 0px 0px 5px #CCC;
-  -moz-box-shadow: 0px 0px 5px #CCC;
-  box-shadow: 0px 0px 5px #CCC; 
-}
-.clear {
-  clear:left;
-}
 	
-	/*alteracoes da barra de navegacao principal*/
-.navbar-brand img {
-    max-width: 100%;
-    height: 50px;
-    margin-top: -15px;
-}
-.navbar-inverse {
-    background: #4D5061;
-    border-bottom: 4px solid #60B078;
-    color: #FFF;
-}
-.navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav > li > a {
-    text-shadow: none;
-    color: #FFF;
-}
-.navbar-inverse .navbar-nav>.active>a,
-.navbar-inverse .navbar-nav>.open>a,
-.navbar-inverse .navbar-nav> ul >li,
-.navbar-inverse .navbar-nav>li.focus>a,
-.navbar-inverse .navbar-nav > .active > a:focus,
-.navbar-inverse .navbar-nav > .active > a:hover,
-.navbar-inverse .navbar-nav > .active >a:visited,
-.navbar-inverse .navbar-nav>li:hover>a:hover {
-    background-image: #60B078;
-    background: #60B078;
-    background-color: #60B078!important;/*necessario para forcar a regra do bootstrap que tem important*/
-    color: #FFF;
-    -webkit-transition: all  ease-in .3s;
-    -o-transition: all  ease-in .3s;
-    -moz-transition: all  ease-in .3s;
-    -ms-transition: all  ease-in .3s;
-    transition: all  ease-in .3s;
-
-}
-.dropdown-menu > li > a:focus, .dropdown-menu > li > a:hover { color: #FFF; text-decoration: none; background-color: #60B078; }
-.dropdown-menu >li >a {padding: 5px 20px;}
-.dropdown-menu > li > a:focus, .dropdown-menu > li > a:hover {
-    margin-top: 0px;
-    margin-bottom: 0px;
-    color: #FFF;
-    font-weight: 200;
-    background-color: #60B078;
-    background-image: none;
-    background-repeat: none;
-    -webkit-transition: all  ease-in .3s;
-    -o-transition: all  ease-in .3s;
-    -moz-transition: all  ease-in .3s;
-    -ms-transition: all  ease-in .3s;
-    transition: all  ease-in .3s;
-}
-.iconSpecial {
-    font-size: 30px;
-    color: #4D5061;
-    text-align: center;
-}
-
-.btn { border-radius: 0px; }
-.text-dark {color: #333;}
-.text-light{color: #eee;}
-.text16 {font-size: 16px;}
-
-ul.nav.navbar-nav.navbar-right:last-child  {
-    margin-right: 50px;
-}
-/*MENU DE CONTEXTO*/
-.navbar-static-top{
-    position: relative;
-    margin-top: 50px;
-    background: #f1ecec;
-    box-shadow: 0px -2px 8px 0px #333333;
-}
-.navbar-static-top .navbar-nav>li>a{color:#4D5061}
-.navbar-static-top .navbar-nav>li>a:hover {
-    color: #4D5061;
-    background-color: #dadada;
-    -webkit-transition: all  ease-in .3s;
-    -o-transition: all  ease-in .3s;
-    -moz-transition: all  ease-in .3s;
-    -ms-transition: all  ease-in .3s;
-    transition: all  ease-in .3s;
-}
-
-.navbar-static-top .navbar-brand {
-    font-size: 14px;
-    color: #4D5061;
-    font-style: normal;
-    font-weight: bolder;
-}
-.navbar-static-top .navbar-brand::after {
-  content: "|";
-  font-size: 20px;
-  color: #4D5061;
-  margin-left: 10px;
-  font-style: normal;
-  font-weight: lighter;
-}
-.navbar-static-top .dropdown-menu > li > a:focus, .dropdown-menu > li > a:hover {
-    margin-top: 0px;
-    margin-bottom: 0px;
-    color: #4D5061;
-    font-weight: 200;
-    background-color: #dadada;
-    background-image: none;
-    background-repeat: none;
-    -webkit-transition: all  ease-in .3s;
-    -o-transition: all  ease-in .3s;
-    -moz-transition: all  ease-in .3s;
-    -ms-transition: all  ease-in .3s;
-    transition: all  ease-in .3s;
-}
-.animated {
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-@-webkit-keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-.fadeIn {
-  -webkit-animation-name: fadeIn;
-  animation-name: fadeIn;
-}
-
-@-webkit-keyframes fadeInDown {
-  0% {
-    opacity: 0;
-    -webkit-transform: translate3d(0, -100%, 0);
-    transform: translate3d(0, -100%, 0);
-  }
-
-  100% {
-    opacity: 1;
-    -webkit-transform: none;
-    transform: none;
-  }
-}
-@-webkit-keyframes flipInX {
-  0% {
-    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
-    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
-    -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
-    opacity: 0;
-  }
-
-  40% {
-    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
-    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
-    -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
-  }
-
-  60% {
-    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
-    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
-    opacity: 1;
-  }
-
-  80% {
-    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
-    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
-  }
-
-  100% {
-    -webkit-transform: perspective(400px);
-    transform: perspective(400px);
-  }
-}
-
-@keyframes flipInX {
-  0% {
-    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
-    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
-    -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
-    opacity: 0;
-  }
-
-  40% {
-    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
-    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
-    -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
-  }
-
-  60% {
-    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
-    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
-    opacity: 1;
-  }
-
-  80% {
-    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
-    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
-  }
-
-  100% {
-    -webkit-transform: perspective(400px);
-    transform: perspective(400px);
-  }
-}
-
-.flipInX {
-  -webkit-backface-visibility: visible !important;
-  backface-visibility: visible !important;
-  -webkit-animation-name: flipInX;
-  animation-name: flipInX;
-}
-
-@-webkit-keyframes flipInY {
-  0% {
-    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
-    transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
-    -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
-    opacity: 0;
-  }
-
-  40% {
-    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
-    transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
-    -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
-  }
-
-  60% {
-    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
-    transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
-    opacity: 1;
-  }
-
-  80% {
-    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
-    transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
-  }
-
-  100% {
-    -webkit-transform: perspective(400px);
-    transform: perspective(400px);
-  }
-}
-#login-dp{
-    min-width: 250px;
-    padding: 14px 14px 0;
-    overflow:hidden;
-    background-color:rgba(255,255,255,.8);
-}
-#login-dp .help-block{
-    font-size:12px
-}
-#login-dp .bottom{
-    background-color:rgba(255,255,255,.8);
-    border-top:1px solid #ddd;
-    clear:both;
-    padding:14px;
-}
-#login-dp .social-buttons{
-    margin:12px 0
-}
-#login-dp .social-buttons a{
-    width: 49%;
-}
-#login-dp .form-group {
-    margin-bottom: 10px;
-}
-.btn-fb{
-    color: #fff;
-    background-color:#3b5998;
-}
-.btn-fb:hover{
-    color: #fff;
-    background-color:#496ebc
-}
-.btn-tw{
-    color: #fff;
-    background-color:#55acee;
-}
-.btn-tw:hover{
-    color: #fff;
-    background-color:#59b5fa;
-}
-@media(max-width:768px){
-    #login-dp{
-        background-color: inherit;
-        color: #fff;
-    }
-    #login-dp .bottom{
-        background-color: inherit;
-        border-top:0 none;
-    }
-}
-@import url(https://fonts.googleapis.com/css?family=Raleway:400,800);
-@import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
-figure.snip1190 {
-  font-family: 'Raleway', Arial, sans-serif;
-  color: #fff;
-  position: relative;
-  float: left;
-  overflow: hidden;
-  margin: 10px 1%;
-  min-width: 220px;
-  max-width: 310px;
-  max-height: 220px;
-  width: 100%;
-  background: #000000;
-  text-align: center;
-}
-figure.snip1190 * {
-  -webkit-box-sizing: padding-box;
-  box-sizing: padding-box;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-}
-figure.snip1190 img {
-  opacity: 0.8;
-  width: 100%;
-}
-figure.snip1190 figcaption {
-  bottom: 0;
-  display: block;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-figure.snip1190 h2 {
-  font-weight: 400;
-  left: 0;
-  right: 0;
-  letter-spacing: -1px;
-  margin: 0 auto;
-  position: absolute;
-  text-transform: uppercase;
-  bottom: 50%;
-  -webkit-transform: translateY(50%);
-  transform: translateY(50%);
-}
-figure.snip1190 h2 span {
-  font-weight: 800;
-}
-figure.snip1190 p {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  top: 50%;
-  opacity: 0;
-  font-size: 14px;
-  -webkit-transform: translateY(-20%) scale(0.7);
-  transform: translateY(-20%) scale(0.7);
-}
-figure.snip1190 .square {
-  height: 78px;
-  width: 78px;
-  overflow: hidden;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  content: '';
-  -webkit-transform: rotate(45deg) translate(-50%, -50%);
-  transform: rotate(45deg) translate(-50%, -50%);
-  -webkit-transform-origin: 0 0;
-  transform-origin: 0 0;
-}
-figure.snip1190 .square:before,
-figure.snip1190 .square:after,
-figure.snip1190 .square div:before,
-figure.snip1190 .square div:after {
-  background-color: #ffffff;
-  position: absolute;
-  content: "";
-  display: block;
-  -webkit-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
-}
-figure.snip1190 .square:before,
-figure.snip1190 .square:after {
-  width: 65%;
-  height: 2px;
-}
-figure.snip1190 .square div:before,
-figure.snip1190 .square div:after {
-  width: 2px;
-  height: 65%;
-}
-figure.snip1190 .square:before,
-figure.snip1190 .square div:before {
-  left: 0;
-  top: 0;
-}
-figure.snip1190 .square:after,
-figure.snip1190 .square div:after {
-  bottom: 0;
-  right: 0;
-}
-figure.snip1190 a {
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  position: absolute;
-}
-figure.snip1190:hover img,
-figure.snip1190.hover img {
-  opacity: 0.25;
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
-}
-figure.snip1190:hover h2,
-figure.snip1190.hover h2 {
-  opacity: 1;
-  -webkit-transform: translateY(0px);
-  transform: translateY(0px);
-}
-figure.snip1190:hover p,
-figure.snip1190.hover p {
-  opacity: 1;
-  -webkit-transform: translateY(0px) scale(1);
-  transform: translateY(0px) scale(1);
-}
-figure.snip1190:hover .square:before,
-figure.snip1190.hover .square:before {
-  width: 38%;
-}
-figure.snip1190:hover .square div:before,
-figure.snip1190.hover .square div:before {
-  height: 38%;
-}
-figure.snip1190:hover .square:after,
-figure.snip1190.hover .square:after {
-  width: 55%;
-}
-figure.snip1190:hover .square div:after,
-figure.snip1190.hover .square div:after {
-  height: 55%;
-}
-
-
 	
 	</style>
 
@@ -824,6 +348,17 @@ figure.snip1190.hover .square div:after {
           <p></p>
           </figcaption>
           <a href="dashboard.php?id=1"></a>
+          </figure>
+          <figure class="snip1190" style="margin-top:0px;">
+          <img src="images/ss2.jpg" alt="sample64"/>
+          <figcaption>
+          <div class="square">
+          <div></div>
+          </div>
+          <h2><span>BUY</span></h2>
+          <p></p>
+          </figcaption>
+          <a href="dashboard.php?id=4"></a>
           </figure>
           <figure class="snip1190" style="margin-top:0px;">
           <img src="images/ss2.jpg" alt="sample64"/>
@@ -1178,6 +713,17 @@ figure.snip1190.hover .square div:after {
           <div></div>
           </div>
           <h2><span>BUY</span></h2>
+          <p></p>
+          </figcaption>
+          <a href="dashboard.php?id=4"></a>
+          </figure>
+          <figure class="snip1190" style="margin-top:0px;">
+          <img src="images/ss2.jpg" alt="sample64"/>
+          <figcaption>
+          <div class="square">
+          <div></div>
+          </div>
+          <h2><span>BUY ALL</span></h2>
           <p></p>
           </figcaption>
           <a href="dashboard.php?id=4"></a>
