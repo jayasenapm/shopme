@@ -96,24 +96,10 @@
 							  
 	</div>
 
-	<?php
-	$kkk=$_GET['tt'];
-	if($kkk==1){
-		?>
-		<form class="" action="addbil.php">
+	
+		
 
-	<?php
-	}else{
-		?>
-		<form class="" action="buybulk.php">
-
-	<?php
-
-
-	}
-
-
-	?>
+	
 	<form class="" action="addbil.php">
     
     <div class="form-group">

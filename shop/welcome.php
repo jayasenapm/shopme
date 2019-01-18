@@ -366,10 +366,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
           <div class="square">
           <div></div>
           </div>
-          <h2><span>BUY</span></h2>
+          <h2><span>UNCATEGORY STOCK</span></h2>
           <p></p>
           </figcaption>
-          <a href="dashboard.php?id=4"></a>
+          <a href="dashboard.php?id=44"></a>
           </figure>
           </div>
           <div class="col-md-3 col-sm-12">

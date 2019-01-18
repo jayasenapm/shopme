@@ -494,7 +494,7 @@ function showUser8(str) {
   }elseif($id=="40"){
      include 'quatation.php';
   }elseif($id=="44"){
-     include 'addsuplier.php?tt=1';
+     include 'uncategorystock.php';
   }
   
   

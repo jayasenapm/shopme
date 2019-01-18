@@ -32,7 +32,7 @@ $total=0;
 		
 		?>
 		
-		<div class="search">
+									<div class="search">
 										<form action="addstock.php">
 											<!--<input type="text" name="code" onmouseover="this.focus();">-->
 											<input type="text" name="code" id="my-input" autofocus="autofocus">
@@ -60,6 +60,8 @@ $total=0;
             </tr>
         </thead>
         <tbody>
+        	
+        
 		<?php
 		$in=0;
 		$ii=0;
@@ -126,6 +128,7 @@ $total=0;
 		   <td style="background-color:green;" colspan="3">Total</td>
             <td><?php echo formatMoney($total,true) ; ?></td>  
 		   </tr>
+		   <tr>
 			<td style="background-color:green;" colspan="3">Tax(15%)</td>
 
 			<?php 
@@ -176,8 +179,10 @@ $total=0;
 
 
 		   </tr>
+		   <tr>
 			<td style="background-color:green;"  colspan="3">Discount</td>
             <td><a style="color:Black;" data-toggle="modal" data-target="#mymenu"><u><?php echo formatMoney($dis,true) ; ?></u></a></td>
+        </tr>
 
 
 										<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="mymenu" class="modal fade">
@@ -212,7 +217,8 @@ $total=0;
 				<tr>
 			<td style="background-color:gray;"  colspan="3">Grade Total</td>
             <td><?php echo formatMoney($total+$tax-$dis,true); ?></td> 
-		   </tr>		   
+		   </tr>
+
 			</tbody>
     </table>
 	<button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#myModal">Payment</button>
@@ -312,69 +318,24 @@ $total=0;
 									<button type="button" class="btn btn-primary " data-toggle="modal" data-target="#myModal23">Add Product</button>
 									
 		<div id="txtHint">
-		<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal23" class="modal fade">
-														<div class="modal-dialog">
-															<div class="modal-content">
-																<div class="modal-header">
-																<button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-															<h4 class="modal-title">Add Product</h4>
-														</div>
-														<div class="modal-body">
+
+	<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal23" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+			<div class="modal-header">
+			<button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+			<h4 class="modal-title">Add Product</h4>
+			</div>
+			<div class="modal-body">
 														
-														<form action="upload.php" class="form-horizontal" role="form" method="post" enctype="multipart/form-data">
-															<input type="hidden" name="inv" value="2">
-									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Product Code/ISBN Number: </label>
+			<form action="bulk.php" class="form-horizontal" role="form" method="post" enctype="multipart/form-data">
+			<input type="hidden" name="inv" value="2">
+				<div class="form-group">
+			<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Product : </label>
 
-										<div class="col-sm-9">
-											<!--<input type="text" name="code" onmouseover="this.focus();">-->
-											<input type="text" id="form-field-1-1" name="code" placeholder="" class="form-control" onmouseover="this.focus();" required/>
+			<div class="col-sm-9">
 											
-										</div>
-										
-										
-									</div>
-									<input type="hidden" id="form-field-1-1" name="ls" placeholder="" value="1" class="form-control" />
-									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Product Name: </label>
-
-										<div class="col-sm-9">
-											<input type="text" id="form-field-1-1" name="pname" placeholder="" class="form-control" required/>
-										</div>
-										
-										
-									</div>
-									
-									
-									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Quanaty: </label>
-
-										<div class="col-sm-9">
-											<input type="text" id="form-field-1-1" name="Quen" placeholder="" class="form-control" required/>
-										</div>
-									</div>
-									
-									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Discount: </label>
-
-										<div class="col-sm-9">
-											<input type="text" id="form-field-1-1" name="Dis" placeholder="" class="form-control" required/>
-										</div>
-									</div>
-									
-									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Price: </label>
-
-										<div class="col-sm-9">
-											<input type="text" id="form-field-1-1" name="price" placeholder="" class="form-control" required/>
-										</div>
-									</div>
-									
-									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1">Product Catagries:</label>
-
-										<div class="col-sm-3">
-												<select class="form-control" Name="catid">
+										<select class="form-control" Name="catid">
 												<option></option>
 												<?php
 											include('connect.php');
@@ -386,37 +347,38 @@ $total=0;
 												?>
 												
 												
-												<option value="<?php echo $row['CaId'];?>"><?php echo $row['Cat_Name'];?></option>
+												<option><?php echo $row['Cat_Name'];?></option>
 												<?php
 												}
 												?>
 												</select>
-												
-												<!--<p><a href="#myModal10" data-toggle="modal" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-pencil"></span></a></p> -->
-												
-												
-												
-												
-												
-												
-												
-										</div>
+											
+			</div>
+										
+										
 									</div>
-									<input type="hidden" name="ms" value="unit">
-									
+									<input type="hidden" id="form-field-1-1" name="ls" placeholder="" value="1" class="form-control" />
 									
 									
 									
 									<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> පින්තුරය තෝරන්න<p class="help-block">Only jpg,jpeg,png and gif file with maximum size of 1 MB is allowed.</p> </label>
-									
-									
-									<input type="file" name="file">
-									
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Quanaty: </label>
+
+										<div class="col-sm-9">
+											<input type="text" id="form-field-1-1" name="Quen" placeholder="" class="form-control" required/>
+										</div>
 									</div>
 									
 									
-								
+									
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Price: </label>
+
+										<div class="col-sm-9">
+											<input type="text" id="form-field-1-1" name="price" placeholder="" class="form-control" required/>
+										</div>
+									</div>
+									
 									
 									<div class="form-group ">
 										<label class="control-label col-sm-3 requiredField" for="date">
@@ -424,7 +386,7 @@ $total=0;
 										
 										<div class="input-group">
 										
-											<input type="submit" class="btn btn-info" value="Submit Button">
+											<input type="submit" class="btn btn-info" value="ADD">
 											<button type="reset" class="btn btn-info" value="Reset">Reset</button>
 									</div>
 									</div>
