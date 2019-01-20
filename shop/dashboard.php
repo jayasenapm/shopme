@@ -1,4 +1,11 @@
-<?php session_start(); ?>
+<?php session_start(); 
+
+if (!isset($_SESSION['SESS_LAST_NAME'])) {
+  header("location: index.php?msg=1");
+}
+
+
+?>
 
 <?php 
 $id= $_GET['id']; 
@@ -495,6 +502,8 @@ function showUser8(str) {
      include 'quatation.php';
   }elseif($id=="44"){
      include 'uncategorystock.php';
+  }elseif($id=="55"){
+     include 'addproductcatag.php';
   }
   
   

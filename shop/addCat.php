@@ -9,7 +9,7 @@ $sql = "INSERT INTO product_cat(Cat_Name) VALUES (:a)";
 $q = $db->prepare($sql);
 $q->execute(array(':a'=>$pid));
 
-header("location: dashboard.php?id=7");
+header("location: dashboard.php?id=55");
 
 
 

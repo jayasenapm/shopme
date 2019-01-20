@@ -30,9 +30,9 @@ $sql = "UPDATE product SET Quanaty = :a WHERE prid =:id";
 */
 $total=$price*$qun;
 
-$sql = "INSERT INTO buy(prid,billNo,Quan,price,total) VALUES (:a,:e,:b,:c,:d)";
+$sql = "INSERT INTO buy(prid,billNo,Quan,price,total,catagrize) VALUES (:a,:e,:b,:c,:d,:un)";
 $q = $db->prepare($sql);
-$q->execute(array(':a'=>$pid,':e'=>$bill,':b'=>$qun,':c'=>$price,':d'=>$total));
+$q->execute(array(':a'=>$pid,':e'=>$bill,':b'=>$qun,':c'=>$price,':d'=>$total,':un'=>'No'));
 
 header("location: dashboard.php?id=5");
 

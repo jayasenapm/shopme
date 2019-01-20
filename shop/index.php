@@ -16,8 +16,30 @@
     <![endif]-->
 </head>
 <body>
-
+<br>
 	<section class="container">
+
+			<?php
+
+			if(isset($_GET['msg'])){
+				?>
+				<div class="alert alert-danger" role="alert">
+					<h3>you're password or username is missing try again</h3>
+  					
+				</div>
+				<?php
+			}
+
+			if(isset($_GET['ex'])){
+				?>
+				<div class="alert alert-danger" role="alert">
+					<h3>Your system date is expired please contact provider</h3>
+  					
+				</div>
+				<?php
+			}
+
+			?>
 			<section class="login-form">
 				<form method="post" action="login.php" role="login">
 					<img src="assets/images/logo.png" class="img-responsive" alt="" />

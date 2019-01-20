@@ -70,7 +70,7 @@
 			exit();
 		}else {
 			//Login failed
-			header("location: index.php");
+			header("location: index.php?msg=1");
 			exit();
 		}
 	}else {

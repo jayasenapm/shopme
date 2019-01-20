@@ -11,7 +11,7 @@ include('connect.php');
 </div>
 										<center>
 									<form class="form-inline" action="admin.php?id=2">
-										<select id="lunch" name="users" class="selectpicker" data-live-search="true" onchange="showUser3(this.value)" title="Please select a  Coustmer">
+										<select id="lunch" name="users" class="selectpicker" data-live-search="true" onchange="showUser3(this.value)" title="Please select a  product">
 										<?php
 										 
 										$result = $db->prepare("SELECT * FROM product ");

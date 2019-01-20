@@ -2,25 +2,42 @@
 
 
 ?>
+
 <link rel="stylesheet" type="text/css" href="tcal.css" />
 <script type="text/javascript" src="tcal.js"></script>
 
 <div class="content" id="content">
+	<?php
+	if(isset($_GET['msg'])){
+		?>
+		<div class="alert alert-warning">
+		<strong>Warning!</strong> <?php echo $_GET['msg']; ?>Indicates a warning that might need attention.
+		</div>
+
+		<?php
+	}
+
+	?>
+	
+  	
+	
 <table id="mytable" class="table table-bordred table-striped">
                    
                    <thead>
-                   
-            <th><input type="checkbox" id="checkall" /></th>
-            <th width="16%"> Bill Number </th>
-			<th width="13%"> Transaction Date </th>
-			<th width="20%"> supplier Name </th>
-			<th width="18%"> Amount </th>
-			<th width="18%"> Tax </th>
-			<th width="18%"> Discount </th>
-			<th width="13%"> Paied </th>
-			<th width="13%"> Balance </th>
+               <tr>
+            <th>No</th>
+            <th width="16%">Product </th>
+			<th width="13%"> Bill No </th>
+			<th width="20%"> Quentaty </th>
+			<th width="18%"> Price per unit </th>
+			<th width="18%"> Total</th>
+			
 			<th width="13%"> Edit </th>
-			<th width="13%"> Delete </th>
+			
+
+
+               </tr>    
+           
 			
                    </thead>
     <tbody>
@@ -35,11 +52,12 @@
 				$dis=0;
 				$ii=0;
 				$tax=0;
+				$sn=0;
 				include('connect.php');
-				$d1=$_GET['d1'];
+				$d1=0;
 				
 				if($d1==0){
-					$result = $db->prepare("SELECT * FROM buil  ORDER by Date DESC ");
+					$result = $db->prepare("SELECT * FROM buy WHERE catagrize='No' ");
 					
 				}else{
 				
@@ -49,83 +67,40 @@
 				$result = $db->prepare("SELECT * FROM buil WHERE Date BETWEEN :a AND :b ORDER by Date DESC ");
 				$result->bindParam(':a', $d1);
 				$result->bindParam(':b', $d2);
+
 				}
 				$result->execute();
 				for($i=0; $row = $result->fetch(); $i++){
-				$cname=$row['SUID'];
-				$f=$row['BilNo'];
+				//$cname=$row['SUID'];
+				//$f=$row['BilNo'];
 				//$paid=$row['PaiedAmount'];
 				//$gpaid=$gpaid+$paid;
-				$dat=$row['Date'];
-				$gtotal=$gtotal+$row['Amount'];
-				$tax=$tax+$row['tax'];
-				$gpaid=$gpaid+$row['Payid'];
-				$sn=$f;
+				//$dat=$row['Date'];
+				//$gtotal=$gtotal+$row['Amount'];
+				//$tax=$tax+$row['tax'];
+				//$gpaid=$gpaid+$row['Payid'];
+				//$sn=$f
+				$sn++;
 				$ii++;
 			?>
     <tr>
-    <td><input type="checkbox" class="checkthis" /></td>
-    <td><?php echo $row['BilNo']; ?></td>
-    <td><?php echo $row['Date']; ?></td>
+    <td><?php echo $sn; ?></td>
+    <td><?php echo $row['prid']; ?></td>
+    <td><?php echo $row['billNo']; ?></td>
 	
-	<?php 
-	if ($row['SUID']==0) {
-			?>
-			<td><?php echo 'cash'; ?></td>
-			<?php
-		}else{
-	$result5 = $db->prepare("SELECT * FROM supplier WHERE SUID= :invice");
-	$result5->bindParam(':invice',$row['SUID']);
-	$result5->execute();
-
-	for($i=0; $row5 = $result5->fetch(); $i++){
+	
+    <td><?php echo $row['Quan']; ?></td>
+	<td><?php echo $row['Price']; ?>
 		
-	?>
-		<td><?php echo $row5['Name']; ?></td>
-	<?php	
-		}
-	}
-	
-	
-	?>
-	
-   
-    <td>
-    	<?php
-    	$bia2=0;
-    	$result51 = $db->prepare("SELECT * FROM buy WHERE billNo= :invice");
-		$result51->bindParam(':invice',$row['BilNo']);
-		$result51->execute();
-
-		for($i=0; $row51 = $result51->fetch(); $i++){
-
-			$bia2=$bia2+$row51['Total'];
-			$bia=$bia+$row51['Total'];
-		}
-
-		echo $bia2;
-		?>
-
-
-    </td>
-    <td><?php echo $row['tax']; ?></td>
-	<td><?php echo $row['Discount']; ?>
-		<?php 
-
-		$dis=$dis+$row['Discount'];
-
-
-		?>
-
 
 	</td>
 
-    <td><?php echo $row['Payid']; ?></td>
-	 <td><?php echo ($bia2+$row['tax']-$row['Discount'])- $row['Payid']; ?></td>
+    <td><?php echo $row['Total']; ?></td>
+	 
 	 <div class="mmm">
     <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit<?php echo $ii ; ?>" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
 	
-    <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete<?php echo $ii ; ?>" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
+    
     </div>
 	
 	</tr>
@@ -136,7 +111,7 @@
     <div class="modal-content">
           <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
-        <h4 class="modal-title custom_align" id="Heading">Edit Invoice</h4>
+        <h4 class="modal-title custom_align" id="Heading">Add Product</h4>
       </div>
           <div class="modal-body">
 		 
@@ -160,7 +135,7 @@
 												?>
 												
 												
-												<option><?php echo $row13['Product_Name'];?></option>
+												<option value="<?php echo $row13['prid'];?>"><?php echo $row13['Product_Name'];?></option>
 												<?php
 												}
 												?>
@@ -179,8 +154,9 @@
 										</div>
 									</div>
        
-	    <input class="form-control " name="id" value="<?php echo $row['BilNo']; ?>" type="hidden" placeholder="">
-	   <button type="submit" class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span> Yes</button>
+	    <input class="form-control " name="id" value="<?php echo $row['billNo']; ?>" type="hidden" placeholder="">
+	    
+	   <button type="submit" class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span> Add</button>
         <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> No</button>
       </form>
 	  

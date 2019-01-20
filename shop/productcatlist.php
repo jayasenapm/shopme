@@ -8,7 +8,7 @@
 <div class="mmm">
 <a href="dashboard.php?id=8" class="btn btn-success" role="button">By Image</a>
 <a href="dashboard.php?id=50" class="btn btn-success" role="button">By List</a>
-
+<a href="dashboard.php?id=59" class="btn btn-success" role="button">By category</a>
 </div>
 <br>
 
@@ -21,14 +21,14 @@
 										<select id="lunch" name="users" class="selectpicker" data-live-search="true" onchange="showUser8(this.value)" title="Please select a  Product">
 										<?php
 										 
-										$result = $db->prepare("SELECT * FROM product ");
+										$result = $db->prepare("SELECT * FROM product_cat ");
 		
 										$result->execute();
 
 										for($i=0; $row = $result->fetch(); $i++){
 												$pid=$row['prid'];
 											?>
-											<option value="<?php echo $row['Product_Name']; ?>"><?php echo $row['Product_Name']; ?></option>
+											<option value="<?php echo $row['Cat_Name']; ?>"><?php echo $row['Cat_Name']; ?></option>
 										<?php } ?>
 										</select>
 										

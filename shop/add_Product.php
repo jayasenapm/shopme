@@ -30,7 +30,7 @@
 							
 							<form action="upload.php" class="form-horizontal" role="form" method="post" enctype="multipart/form-data">
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Product Code/ISBN Number: </label>
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Product Code: </label>
 
 										<div class="col-sm-9">
 											<input type="text" id="form-field-1-1" name="code" placeholder="" class="form-control" autofocus="autofocus" required/>

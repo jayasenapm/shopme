@@ -1,12 +1,23 @@
 <?php session_start(); ?>
 <?php
-$exp_date = '2019-12-31';
+
+if (!isset($_SESSION['SESS_LAST_NAME'])) {
+  header("location: index.php?msg=1");
+}
+
+
+
+
+
+
+
+$exp_date = '2019-2-31';
 $todays_date = date('Y-m-d');
 $today = strtotime($todays_date);
 $expiration_date = strtotime($exp_date);
 if ($expiration_date <= $today){
 
- echo 'Your system expired contact jayasena from phone ';
+ header("location: index.php?ex=1");
 
 }else{
 
@@ -93,7 +104,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head> 
 <body>
 
-   <div class="page-container">
+   <div class="page-container" style="height: 800px;">
    <!--/content-inner-->
 
 	   <div class="inner-content">
@@ -360,20 +371,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
           </figcaption>
           <a href="dashboard.php?id=4"></a>
           </figure>
-          <figure class="snip1190" style="margin-top:0px;">
-          <img src="images/ss2.jpg" alt="sample64"/>
-          <figcaption>
-          <div class="square">
-          <div></div>
-          </div>
-          <h2><span>UNCATEGORY STOCK</span></h2>
-          <p></p>
-          </figcaption>
-          <a href="dashboard.php?id=44"></a>
-          </figure>
+          
           </div>
           <div class="col-md-3 col-sm-12">
-          
+          <!--
           <figure class="snip1190" style="" >
           <img src="images/ss3.jpg" alt="sample64"/>
           <figcaption>
@@ -383,6 +384,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
           </figcaption>
           <a href="Tosales.php"></a>
           </figure>
+          -->
           <figure class="snip1190" style="" >
           <img src="images/ss3.jpg" alt="sample64"/>
           <figcaption>
@@ -425,6 +427,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
           </div>
           
           <div class="col-md-3 col-sm-12">
+            <figure class="snip1190" style="" >
+          <img src="images/ss3.jpg" alt="sample64"/>
+          <figcaption>
+          
+          <h3><span>ADD PRODUCT CATEGORY  </span></h3>
+          
+          </figcaption>
+          <a href="dashboard.php?id=55"></a>
+          </figure>
           <figure class="snip1190" style="" >
           <img src="images/ss.jpg" alt="sample64"/>
           <figcaption>
@@ -448,6 +459,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
           <a href="dashboard.php?id=8"></a>
           </figure>
           
+          
+          
+          
+          </div>
+          
+          <div class="col-md-3 col-sm-12">
+          
+          
+          <figure class="snip1190" style="" >
+          <img src="images/ss3.jpg" alt="sample64"/>
+          <figcaption>
+          
+          <h3><span>SUPPLIER </span></h3>
+          
+          </figcaption>
+          <a href="dashboard.php?id=25"></a>
+          </figure>
+
           <figure class="snip1190" style="" >
           <img src="images/ss3.jpg" alt="sample64"/>
           <figcaption>
@@ -528,21 +557,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                           </div>
           
           </figure>
-          
-          
-          </div>
-          
-          <div class="col-md-3 col-sm-12">
-          
-          
-          <figure class="snip1190" style="" >
-          <img src="images/ss3.jpg" alt="sample64"/>
+          <figure class="snip1190" style="margin-top:0px;">
+          <img src="images/ss2.jpg" alt="sample64"/>
           <figcaption>
-          
-          <h3><span>SUPPLIER </span></h3>
-          
+          <div class="square">
+          <div></div>
+          </div>
+          <h2><span>UNCATEGORY STOCK</span></h2>
+          <p></p>
           </figcaption>
-          <a href="dashboard.php?id=25"></a>
+          <a href="dashboard.php?id=44"></a>
           </figure>
           <!--
           <figure class="snip1190" style="" >
@@ -554,7 +578,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
           </figcaption>
           <a href="dashboard.php?id=27"></a>
           </figure>
-        -->
+        
+
           <figure class="snip1190" style="" >
           <img src="images/ss3.jpg" alt="sample64"/>
           <figcaption>
@@ -617,7 +642,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
           
           
           
-          <!--<a href="dashboard.php?id=28"></a>-->
+          
           </figure>
           
           <figure class="snip1190" style="" >
@@ -653,7 +678,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
           
           
           
-          <!--<a href="dashboard.php?id=28"></a>-->
+          
           </figure>
           
           <figure class="snip1190" style="" >
@@ -689,10 +714,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
           
           
           
-          <!--<a href="dashboard.php?id=28"></a>-->
+         
           </figure>
+          -->
             <?php
-          }else{
+          }elseif($_SESSION['SESS_LAST_NAME']=='cashier'){
 
             ?>
           <figure class="snip1190" style="" >
@@ -717,20 +743,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
           </figcaption>
           <a href="dashboard.php?id=4"></a>
           </figure>
-          <figure class="snip1190" style="margin-top:0px;">
-          <img src="images/ss2.jpg" alt="sample64"/>
-          <figcaption>
-          <div class="square">
-          <div></div>
-          </div>
-          <h2><span>BUY ALL</span></h2>
-          <p></p>
-          </figcaption>
-          <a href="dashboard.php?id=4"></a>
-          </figure>
+          
           </div>
           <div class="col-md-3 col-sm-12">
-          
+          <!--
           <figure class="snip1190" style="" >
           <img src="images/ss3.jpg" alt="sample64"/>
           <figcaption>
@@ -740,7 +756,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
           </figcaption>
           <a href="Tosales.php"></a>
           </figure>
-          
+          -->
           
           <figure class="snip1190" style="" >
           <img src="images/ss3.jpg" alt="sample64"/>
@@ -885,7 +901,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
           </figcaption>
           <a href="dashboard.php?id=25"></a>
           </figure>
-         
+
+          <figure class="snip1190" style="margin-top:0px;">
+          <img src="images/ss2.jpg" alt="sample64"/>
+          <figcaption>
+          <div class="square">
+          <div></div>
+          </div>
+          <h2><span>UNCATEGORY STOCK</span></h2>
+          <p></p>
+          </figcaption>
+          <a href="dashboard.php?id=44"></a>
+          </figure>
+         <!--
           <figure class="snip1190" style="" >
           <img src="images/ss3.jpg" alt="sample64"/>
           <figcaption>
@@ -948,7 +976,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
           
           
           
-          <!--<a href="dashboard.php?id=28"></a>-->
+          
           </figure>
           
           <figure class="snip1190" style="" >
@@ -984,7 +1012,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
           
           
           
-          <!--<a href="dashboard.php?id=28"></a>-->
+          
           </figure>
           
           <figure class="snip1190" style="" >
@@ -1020,10 +1048,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
           
           
           
-          <!--<a href="dashboard.php?id=28"></a>-->
+          
           </figure>
 
-
+          -->
 
             <?php
 
